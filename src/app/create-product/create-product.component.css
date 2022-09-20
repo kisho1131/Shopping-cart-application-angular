@@ -1,0 +1,12 @@
+.card {
+  margin: 0 auto; /* Added */
+  float: none; /* Added */
+  margin-bottom: 10px; /* Added */
+}
+.form-group {
+  margin-top: 10px;
+}
+
+.btn {
+  margin-top: 15px;
+}
