@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import Swal from 'sweetalert2';
 import { Product } from '../product';
 import { ProductService } from '../service/product.service';
 
@@ -31,6 +32,7 @@ export class ProductComponent implements OnInit {
   deleteProduct(id: number) {
     this.productService.deleteProduct(id).subscribe((data) => {
       this.getProducts();
+      Swal.fire('Product Deleted Successfully !', '', 'info');
       console.log(data);
     });
   }

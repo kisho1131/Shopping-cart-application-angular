@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Route, Router } from '@angular/router';
+import Swal from 'sweetalert2';
 import { Product } from '../product';
 import { ProductService } from '../service/product.service';
 
@@ -19,6 +20,7 @@ export class CreateProductComponent implements OnInit {
   saveProduct() {
     this.productServive.saveProduct(this.products).subscribe((data) => {
       this.goToProductList();
+      Swal.fire('Product Added Successfully', '', 'success');
       console.log(data);
       error: console.error;
     });

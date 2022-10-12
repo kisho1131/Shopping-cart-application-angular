@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
+import Swal from 'sweetalert2';
 import { Product } from '../product';
 import { ProductService } from '../service/product.service';
 
@@ -24,6 +25,7 @@ export class UpdateProductComponent implements OnInit {
       .updateProductById(this.id, this.products)
       .subscribe((data) => {
         this.goToProductList();
+        Swal.fire('Product Updated Successfully !', '', 'info');
         error: console.error;
       });
   }
